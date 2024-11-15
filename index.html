@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raeela Films</title>
+</head>
+<body>
+    <h1>Raeela Films</h1>
+    <div id="calendar"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/ics-calendar-view/dist/ics-calendar-view.min.js"></script>
+    <script>
+        const icsUrl = 'https://calendar.google.com/calendar/ical/6ea7ab1843624bd63a8033cc9c7655227ac9f15907c5d08ad84460501131d007%40group.calendar.google.com/private-237da353bc85f7bdc144220302a1092d/basic.ics';
+
+        const calendar = new ICSCalendarView({
+            target: '#calendar',
+            icsUrl: icsUrl,
+            initialView: 'month'
+        });
+        calendar.render();
+    </script>
+</body>
+</html>
