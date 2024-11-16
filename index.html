@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raeela Films</title>
+    <style>
+        iframe {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
 </head>
 <body>
     <h1>Raeela Films</h1>
-    <div id="calendar"></div>
+    <iframe src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID_HERE&ctz=America%2FNew_York" frameborder="0" scrolling="no"></iframe>
 
-    <script src="https://cdn.jsdelivr.net/npm/ics-calendar-view/dist/ics-calendar-view.min.js"></script>
     <script>
-        const icsUrl = 'https://calendar.google.com/calendar/ical/6ea7ab1843624bd63a8033cc9c7655227ac9f15907c5d08ad84460501131d007%40group.calendar.google.com/private-237da353bc85f7bdc144220302a1092d/basic.ics';
+        // Replace 'YOUR_CALENDAR_ID_HERE' with the ID of your Google Calendar
+        const calendarId = '6ea7ab1843624bd63a8033cc9c7655227ac9f15907c5d08ad84460501131d007@group.calendar.google.com';
+        const iframeUrl = `https://calendar.google.com/calendar/embed?src=${calendarId}&ctz=America%2FNew_York`;
 
-        const calendar = new ICSCalendarView({
-            target: '#calendar',
-            icsUrl: icsUrl,
-            initialView: 'month'
-        });
-        calendar.render();
+        const iframe = document.querySelector('iframe');
+        iframe.src = iframeUrl;
     </script>
 </body>
 </html>
